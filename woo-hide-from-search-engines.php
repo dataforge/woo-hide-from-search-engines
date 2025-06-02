@@ -45,12 +45,14 @@ if (!function_exists('whfse_add_noindex_meta_tag_for_video_category')) {
     add_action('wp_head', 'whfse_add_noindex_meta_tag_for_video_category');
 }
 
-// Admin settings page for selecting categories
+ // Admin settings page for selecting categories
 add_action('admin_menu', 'whfse_add_settings_page');
 function whfse_add_settings_page() {
-    add_options_page(
-        'Woo Hide From Search Engines',
-        'Woo Hide From Search Engines',
+    // Add submenu under WooCommerce menu
+    add_submenu_page(
+        'woocommerce',
+        'Woo Hide From Search Engines', // Page title
+        'Woo Hide From Search Engines', // Menu title
         'manage_options',
         'whfse-settings',
         'whfse_render_settings_page'
