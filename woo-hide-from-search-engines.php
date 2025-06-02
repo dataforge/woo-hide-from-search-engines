@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Woo Hide From Search Engines
-Description: Adds a noindex meta tag to WooCommerce products in the "Video" category (category ID 20), including product variations, to prevent them from being indexed by search engines.
+Description: Adds a noindex meta tag to selected WooCommerce products categories to prevent them from being indexed by search engines.
 Plugin URI: https://github.com/dataforge/woo-hide-from-search-engines
 Version: 1.10
 Author: Dataforge
