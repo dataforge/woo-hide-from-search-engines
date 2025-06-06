@@ -113,11 +113,19 @@ function whfse_render_settings_page() {
     echo '</h2>';
 
     // General tab content
-    if ($active_tab === 'general') {
+if ($active_tab === 'general') {
         $selected_category_ids = get_option('whfse_selected_category_ids', array());
         if (!is_array($selected_category_ids)) {
             $selected_category_ids = array();
         }
+
+        // Explanatory text about what the plugin does
+        echo '<div style="margin-bottom: 1em; max-width: 700px;">';
+        echo '<strong>What does this plugin do?</strong><br>';
+        echo 'This plugin helps you prevent selected WooCommerce product categories from being indexed by search engines. ';
+        echo 'When you select categories below, any product in those categories (or their variations) will have a <code><meta name="robots" content="noindex"></code> tag added to its page. ';
+        echo 'The <strong>noindex</strong> tag tells search engines not to index those product pages, so they will not appear in search engine results.';
+        echo '</div>';
 
         $categories = get_terms(array(
             'taxonomy' => 'product_cat',
